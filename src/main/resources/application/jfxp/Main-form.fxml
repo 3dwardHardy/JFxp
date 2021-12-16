@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.jfxp.Controller.MainMController">
+   <children>
+      <Label layoutX="30.0" layoutY="27.0" prefHeight="32.0" prefWidth="325.0" text="Inventory Management System" textFill="#2215d0">
+         <font>
+            <Font name="Serif Regular" size="22.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="523.0" layoutY="104.0" prefHeight="592.0" prefWidth="455.0">
+         <children>
+            <TreeTableView fx:id="productTableView" layoutY="40.0" prefHeight="497.0" prefWidth="455.0">
+              <columns>
+                <TreeTableColumn fx:id="tProductID" prefWidth="75.0" text="Product ID" />
+                <TreeTableColumn fx:id="tProductName" prefWidth="150.0" text="Product Name" />
+                  <TreeTableColumn fx:id="tPInvLevel" prefWidth="118.0" text="Inventory Level" />
+                  <TreeTableColumn fx:id="tPpriceCost" prefWidth="109.0" text="Price/Cost per Unit" />
+              </columns>
+            </TreeTableView>
+            <TextField layoutX="275.0" layoutY="2.0" prefHeight="25.0" prefWidth="179.0" promptText="Search By Product ID or Name" />
+            <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="1.0" text="Products">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="281.0" layoutY="547.0" mnemonicParsing="false" onAction="#onActionPAdd" text="Add" />
+            <Button layoutX="338.0" layoutY="547.0" mnemonicParsing="false" onAction="#onActionPModify" text="Modify" />
+            <Button layoutX="404.0" layoutY="547.0" mnemonicParsing="false" onAction="#onActionPRemove" text="Delete" />
+         </children>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="30.0" layoutY="97.0" prefHeight="604.0" prefWidth="455.0">
+         <children>
+            <TextField layoutX="276.0" layoutY="16.0" prefHeight="25.0" prefWidth="179.0" promptText="Search By Part ID or Name" />
+            <TreeTableView fx:id="partTableView" layoutY="50.0" prefHeight="497.0" prefWidth="455.0">
+               <columns>
+                  <TreeTableColumn fx:id="tPartId" prefWidth="75.0" text="Part ID" />
+                  <TreeTableColumn fx:id="tPartName" prefWidth="150.0" text="Part Name" />
+                  <TreeTableColumn fx:id="tInvLevel" prefWidth="118.0" text="Inventory Level" />
+                  <TreeTableColumn fx:id="tPartCost" prefWidth="109.0" text="Price/Cost per Unit" />
+               </columns>
+            </TreeTableView>
+            <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" text="Parts">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="290.0" layoutY="557.0" mnemonicParsing="false" onAction="#onActionAddPart" text="Add" />
+            <Button layoutX="339.0" layoutY="557.0" mnemonicParsing="false" onAction="#onActionModify" text="Modify" />
+            <Button layoutX="404.0" layoutY="557.0" mnemonicParsing="false" onAction="#onActionRemove" text="Delete" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="845.0" layoutY="706.0" mnemonicParsing="false" onAction="#onActionExit" text="EXIT">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>
